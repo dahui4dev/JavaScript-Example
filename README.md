@@ -1,8 +1,8 @@
 # JavaScript-Example（JavaScript学习记录）
 
 > Learn JavaScript Again
- 
-记录自己曾经遗漏的小知识点，系统性的学习JavaScript体系。过程中避免不了要涉及HTML，以及CSS的内容。
+>
+> 记录自己曾经遗漏的小知识点，系统性的学习JavaScript体系。过程中避免不了要涉及HTML，以及CSS的内容。
 此系列文章可能更适合我自己的知识体系，如果其中恰好也有帮助到你的知识点，那真是甚感荣幸。
 
 ## 知识点列表：
