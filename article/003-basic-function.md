@@ -1,4 +1,4 @@
-## JavaScript 函数
+## JavaScript 基本概念-函数
 
 ### 1、理解参数
 
@@ -6,18 +6,27 @@ ECMAScript 函数的一个重要特点： 命名的参数只提供便利，但�
 
 
 ```javascript
-function doSomeThing(arg1, arg2) {
+function doAdd(arg1, arg2) {
   // 由于 arguments[0] 与 arg1 值相同，因此他们可以互换使用。
   // arguments 的值永远与对应命名参数的值保持同步。
   arguments[1] = 10;
   console.log(arg2);  // 10
 }
 
+doAdd(10, 20);
+
 ```
 
-关于参数：没有传递值的命名参数将自动被赋予 undefined 值。这就跟定义了变量但又没有初始化一样。
+关于参数：没有传递值的命名参数将自动被赋予 undefined 值。这就跟定义了变量但又没有初始化一样。例如：
 
 ```javascript
+
+function doAdd(arg1, arg2){
+  console.log(arg1);  // 10
+  console.log(arg2);  // undefined
+}
+
+doAdd(10)
 
 ```
 
