@@ -1,9 +1,15 @@
 <html>
-  <head>
-    <title>Example HTML page</title>
-  </head>
-  <body>
-    <!-- 这里放内容 -->
-    <script type="application/javascript" src="test.js"></script>
-  </body>
+<head>
+  <title>Example HTML page</title>
+  <script type="application/javascript">
+    window.onload = function () {
+      for (var temp in window) {
+        document.write("" + temp + "<br>")
+      }
+    }
+  </script>
+</head>
+<body>
+
+</body>
 </html>
