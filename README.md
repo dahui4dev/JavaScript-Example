@@ -1,6 +1,7 @@
-# JavaScript-Example（JavaScript学习记录）
+# JavaScript学习记录
 
-> Learn JavaScript Again
+> 总结内容主要都是红宝书中阅读整理
+> 其实都推荐前端学习一下此书：《JavaScript高级程序设计》 [美] Nicholas C.Zakas 著
 >
 > 记录自己曾经遗漏的小知识点，系统性的学习JavaScript体系。过程中避免不了要涉及HTML，以及CSS的内容。
 此系列文章可能更适合我自己的知识体系，如果其中恰好也有帮助到你的知识点，那真是甚感荣幸。
