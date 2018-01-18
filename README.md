@@ -12,8 +12,8 @@
 3. [√][基本概念-函数](./article/003-basic-function.md)
 4. [√][变量、作用域或内存问题](./article/004-variables-scope.md)
 5. [-][引用类型](./article/005-reference-data-types.md)
-5. [-]面向对象的程序设计
-6. [-]函数表达式
-7. [-]BOM
+6. [-]面向对象的程序设计
+7. [-]函数表达式
+8. [-]BOM
 
 未完待续...
