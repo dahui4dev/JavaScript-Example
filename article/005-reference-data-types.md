@@ -108,6 +108,7 @@ if(Array.isArray(value)){
 
 #### 2.4、数组转换方法
 
+所有对象都具有 toLocaleString()、toString() 和 valueOf() 方法。
 
 
 
