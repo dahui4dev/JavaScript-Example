@@ -119,7 +119,6 @@ if(Array.isArray(value)){
 **注意最后两项**
 
 ```javascript 1.8
-
 let colors = ['red', 'blue', 'green'];
 
 console.log(colors.toString())           // red,blue,green
@@ -129,13 +128,12 @@ console.log(colors)                      // [ 'red', 'blue', 'green' ]
 
 alert(colors.valueOf());                 // red,blue,green
 alert(colors);                           // red,blue,green
-
 ```
+
 调用 valueOf() 返回的还是数组。实际上，调用数组的 valueOf() 会调用数组每个值的 toString() 方法并做拼接。
 同样调用数组的 toLocaleString、toString，都会调用每个值的对应方法。
 
 ```javascript 1.8
-
 let person1 = {
   toLocaleString: function(){
     return "1 => toLocaleString "
@@ -160,7 +158,6 @@ let persons = [person1, person2];
 alert(persons);                         // 1 => toString ,2 => toString
 alert(persons.toString());              // 1 => toString ,2 => toString 
 alert(persons.toLocaleString());        // 1 => toLocaleString ,2 => toLocaleString 
-
 ```
 
 #### 2.5、数组栈方法
