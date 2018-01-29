@@ -228,18 +228,9 @@ console.log(person)                                 // 移除后的数组   [ 'D
 
 正向队列使用：push() shift() 从尾巴先进一个，再从头出去一个
 
-```javascript 1.8
-
-// TODO: 待补图说明
-
-```
 反向队列使用：unshift() pop() 从头进去一个，再从尾巴先出一个
 
-```javascript 1.8
-
-// TODO: 待补图说明
-
-
+![队列图示](./img/005-queue.png)
 
 
 
