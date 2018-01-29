@@ -116,7 +116,7 @@ if(Array.isArray(value)){
 调用数组的toString() 方法会返回由数组中每个值的字符串拼接而成的一个以逗号分隔的字符串。
 看下面这个例子：
 
-__**注意最后两项**__
+**注意最后两项**
 
 ```javascript 1.8
 
@@ -208,15 +208,9 @@ console.log(rm)                                     // 移除项
 console.log(person)                                 // 移除后的数组   [ 'Dennis', '26' ]
 
 ```
-#### 栈、队列小结：
+#### 2.7、栈、队列小结：
 
 正向栈使用：push() pop()
-
-```javascript 1.8
-
-// TODO: 待补图说明
-
-```
 
 反向栈使用：unshift() shift()
 
