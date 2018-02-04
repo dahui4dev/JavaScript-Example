@@ -211,7 +211,7 @@ console.log(person)                                 // 移除后的数组   [ 'D
 
 反向栈使用：unshift() shift()
 
-```javascript 1.8
+```javascript
 
 // TODO: 待补图说明
 
