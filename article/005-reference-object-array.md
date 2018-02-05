@@ -225,7 +225,9 @@ console.log(person)                                 // 移除后的数组   [ 'D
 
 
 
+#### 2.7、重排序方法
 
+排序方法 reverse() 和 sort()
 
 
 
