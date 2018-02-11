@@ -118,7 +118,8 @@ if(Array.isArray(value)){
 
 **注意最后两项**
 
-```javascript 1.8
+```javascript
+
 let colors = ['red', 'blue', 'green'];
 
 console.log(colors.toString())           // red,blue,green
@@ -128,12 +129,13 @@ console.log(colors)                      // [ 'red', 'blue', 'green' ]
 
 alert(colors.valueOf());                 // red,blue,green
 alert(colors);                           // red,blue,green
+
 ```
 
 调用 valueOf() 返回的还是数组。实际上，调用数组的 valueOf() 会调用数组每个值的 toString() 方法并做拼接。
 同样调用数组的 toLocaleString、toString，都会调用每个值的对应方法。
 
-```javascript 1.8
+```javascript
 let person1 = {
   toLocaleString: function(){
     return "1 => toLocaleString "
@@ -171,8 +173,7 @@ alert(persons.toLocaleString());        // 1 => toLocaleString ,2 => toLocaleStr
 - push()：从数组末尾逐个添加任意个项目， return 修改后的新数组长度
 - pop()：从数组末尾移除最后一项，  return 移除的项。
 
-```javascript 1.8
-
+```javascript
 let person = new Array();
 let count = person.push('wjh', 'Dennis', '26')
 console.log(count)
@@ -193,7 +194,7 @@ console.log(person)
 - shift()：从前端 **移除** 数组第一项，return 移除项，同时将数组长度减1.
 - unshift()：从前端 **添加** 任意个项目，return 修改后的新数组长度。
 
-```javascript 1.8
+```javascript
 
 let person = new Array();                           // 创建一个数组
 let count = person.push('wjh', 'Dennis', '26')      // 推入三项
