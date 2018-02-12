@@ -1,10 +1,10 @@
-## JavaScript 基本概念-基础数据类型
+# JavaScript 基本概念-基础数据类型
 
-### 1、基本数据类型
+## 1、基本数据类型
 
 ECMAScript 有 5 种原始类型（primitive type），即 Undefined、Null、Boolean、Number 和 String。
 
-#### typeof 运算符
+### typeof 运算符
 
 **对变量或值调用 typeof 运算符将返回下列值之一：**
 
@@ -16,9 +16,9 @@ ECMAScript 有 5 种原始类型（primitive type），即 Undefined、Null、Bo
 
 注释：您也许会问，为什么 typeof 运算符对于 null 值会返回 "Object"。这实际上是 JavaScript 最初实现中的一个错误，然后被 ECMAScript 沿用了。现在，null 被认为是对象的占位符，从而解释了这一矛盾，但从技术上来说，它仍然是原始值。
 
-#### Number 类型
+### Number 类型
 
-##### 特殊的 Number 值
+#### 特殊的 Number 值
 > 几个特殊值也被定义为 Number 类型。前两个是 Number.MAX_VALUE 和 Number.MIN_VALUE，它们定义了 Number 值集合的外边界。所有 ECMAScript 数都必须在这两个值之间。
 >
 > 事实上，有专门的值表示无穷大，（如你猜到的）即 Infinity。Number.POSITIVE_INFINITY 的值为 Infinity。Number.NEGATIVE_INFINITY 的值为 -Infinity。
@@ -27,7 +27,7 @@ ECMAScript 有 5 种原始类型（primitive type），即 Undefined、Null、Bo
 
 **NaN 也不能用于算术计算。NaN 的另一个奇特之处在于，它与自身不相等**
 
-#### Object 类型
+### Object 类型
 
 ECMAScript 中的对象其实就是一组数据和功能的集合。对象可以通过执行new操作符后跟要创建的对象类型的名称来创建。而创建Object类型的实例并为其添加属性和（或）方法，就可以创建自定义对象，如下所示：
 
@@ -41,7 +41,7 @@ var o = new Object;  // 有效，但不推荐
 **这里有一个重要的思想：**
 在ECMAScript中，Object类型是所有他的实例的基础。换句话说，Object类型所具有的任何属性和方法也同样存在于更具体的对象中。
 
-##### Object的每个实例都有下列属性和方法。
+#### Object的每个实例都有下列属性和方法。
 
 - Constructor：构造函数；保存着用于创建当前对象的函数。
 - hasOwnProperty(propertyName)：用于检查给定的属性在当前对象实例中（而不是在实例的原型中）是否存在。其中，作为参数的属性名（propertyName）必须以字符串形式指定（例如：o.hasOwnProperty(*name*)）。

@@ -1,16 +1,14 @@
----
-title: JavaScript 引用数据类型
----
-
-## JavaScript 引用数据类型
+# JavaScript 引用数据类型
 
 本章内容较多，
 引用类型的值（对象）是引用类型的一个实例。引用类型是一种数据结构，用于将数据和功能组织在一起。
 ECMAScript 提供了很多原生引用类型。
 
-### 1、Object类型
+## 1、Object类型
 
-#### 1.1、创建对象的方式：
+
+
+### 1.1、创建对象的方式：
 
 1. 使用构造函数：
 
@@ -33,7 +31,10 @@ person.name = "wjh";
 person.age = 26;
 ```
 
-#### 1.2、读取对象属性：
+
+
+
+### 1.2、读取对象属性：
 
 ```javascript
 // 两种方式看起来没区别
@@ -51,9 +52,13 @@ person["first name"] = "wjh"
 
 通常，除非必须使用变量来访问属性，否则我们建议使用点表示法。
 
+
+
 ### 2、Array类型
 
-#### 2.1、数组创建方式
+
+
+### 2.1、数组创建方式
 
 ```javascript
 // 1、使用构造函数：
@@ -72,10 +77,12 @@ var colors = new Array("red", "blue", "green");
 var colors = ["red", "blue", "green"];    // 创建一个包含3个字符串的数组
 var names = [];                           // 创建一个空数组
 var values = [1, 2, ];                    // 不推荐这样用，这样会创建一个包含 2 或 3 项的数组。实测在Chrome 63.0.3239.132（正式版本）创建为length=2 的数组。
-
 ```
 
-#### 2.2、数组读取方式
+
+
+
+### 2.2、数组读取方式
 
 使用索引读取
 
@@ -97,7 +104,11 @@ alert(colors[2]);   // 读取第三项，为：undefined
 ```
 同理：减少项数会缩短数组长度。增加项数也会增加数组长度。新增加的位置的值都是 undefined。
 
-#### 2.3、检测数组
+
+
+
+
+### 2.3、检测数组
 
 常用检测数组的方式：
 
@@ -113,7 +124,10 @@ if(Array.isArray(value)){
 }
 ```
 
-#### 2.4、数组转换方法
+
+
+
+### 2.4、数组转换方法
 
 所有对象都具有 toLocaleString()、toString() 和 valueOf() 方法。
 
@@ -123,7 +137,6 @@ if(Array.isArray(value)){
 **注意最后两项**
 
 ```javascript
-
 let colors = ['red', 'blue', 'green'];
 
 console.log(colors.toString())           // red,blue,green
@@ -133,7 +146,6 @@ console.log(colors)                      // [ 'red', 'blue', 'green' ]
 
 alert(colors.valueOf());                 // red,blue,green
 alert(colors);                           // red,blue,green
-
 ```
 
 调用 valueOf() 返回的还是数组。实际上，调用数组的 valueOf() 会调用数组每个值的 toString() 方法并做拼接。
@@ -166,7 +178,10 @@ alert(persons.toString());              // 1 => toString ,2 => toString
 alert(persons.toLocaleString());        // 1 => toLocaleString ,2 => toLocaleString 
 ```
 
-#### 2.5、数组栈方法
+
+
+
+### 2.5、数组栈方法
 
 什么是栈？
 
@@ -186,9 +201,11 @@ console.log(person)
 let rm = person.pop()
 console.log(rm)
 console.log(person)
-
 ```
-#### 2.6、数组队列方法
+
+
+
+### 2.6、数组队列方法
 
 什么是队列？
 - 队列是一种 **FIFO（First-In-First-Out 先进先出）** 的数据结构。
@@ -199,7 +216,6 @@ console.log(person)
 - unshift()：从前端 **添加** 任意个项目，return 修改后的新数组长度。
 
 ```javascript
-
 let person = new Array();                           // 创建一个数组
 let count = person.push('wjh', 'Dennis', '26')      // 推入三项
 console.log(count)                              
@@ -208,11 +224,13 @@ console.log(person)                                 // [ 'wjh', 'Dennis', '26' ]
 let rm = person.shift()                             // 从前端移除一项
 console.log(rm)                                     // 移除项
 console.log(person)                                 // 移除后的数组   [ 'Dennis', '26' ]
-
 ```
-#### 2.7、栈、队列小结：
 
-##### 栈的使用
+
+
+### 2.7、栈、队列小结：
+
+#### 栈的使用
 
 正向栈使用：push() pop()  从尾部进一个，再从尾部出一个
 
@@ -221,7 +239,7 @@ console.log(person)                                 // 移除后的数组   [ 'D
 ![队列图示](./img/005-stack.png)
 
 
-##### 队列的使用
+#### 队列的使用
 
 正向队列使用：push() shift() 从尾部先进一个，再从头部出去一个
 
@@ -231,9 +249,204 @@ console.log(person)                                 // 移除后的数组   [ 'D
 
 
 
-#### 2.7、重排序方法
+### 2.7、重排序方法
 
 排序方法 reverse() 和 sort()
+
+reverse() 反转数组的顺序；但是仅仅如此，还不够灵活，所以才有了 sort() 方法。
+
+默认，sort() 方法按照升序排列数组——最小的在前面，最大的在后面。
+ 
+**注意** sort() 排序会调用每个数组项的 toString() 转型方法，也就是说 sort() 实际比较的是字符串，哪怕数组中元素是数值，sort() 方法比较的仍然是字符串。
+
+举个例子：
+```javascript
+var values = [1, 2, 5, 10, 2, 3, 9];
+values.sort();
+console.log(values);    // [ 1, 10, 2, 2, 3, 5, 9 ]
+```
+
+可以看到 10 排到了 2 前面，这是因为在进行字符串比较时， “10” 位于 “5” 前面。这种比较字符的方式显然不是我们想要的结果。因此 sort() 方法可以接收一个**“比较函数”**作为参数，方便我们指定那个值在前面。
+
+
+比较函数接收两个参数，如果第一个位于第二个**之前**则返回一个**负数**，如果两个相等则返回0，如果第一个参数应该位于第二个**之后**则返回一个**正数**。以下是一个简单的比较函数示例：
+
+```javascript
+// 比较函数
+function compare(val1, val2) {
+  return val1 < val2 ? -1 : (val1 > val2 ? 1 : 0)
+}
+
+// 以上函数等同于下
+function compare(val1, val2) {
+  if (val1 < val2) {
+    return -1;
+  } else if (val1 > val2) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+// 更简便的方法, 两个参数相减，得到的结果与上面的判断是等同的。
+function compare(val1, val2) {
+  return val1 - val2 
+}
+```
+
+由于比较函数通过返回一个小于零、等于零和大于零的值来影响排序结果，因此减法操作就可以适当处理所有情况。
+
+
+
+
+
+### 2.8 数组操作方法
+
+#### 1. concat() 用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。
+
+```javascript
+var values = [1, 5, 9, 2, 4]
+var values2 = [12, 53, 92, 90]
+
+var result1 = values.concat(values2)
+console.log(result1)          // [ 1, 5, 9, 2, 4, 12, 53, 92, 90 ]
+
+var result2 = values.concat(values2, 4, 44, 444)
+console.log(result2)          // [ 1, 5, 9, 2, 4, 12, 53, 92, 90, 4, 44, 444 ]
+```
+
+上述示例演示了 concat() 方法将 value1 和 value2 数组合并成一个新数组 result1；
+concat 还可以将非数组元素直接添加到合并后的数组当中 result2。
+
+**注意** concat 方法是 copy 当前数组返回副本，不会修改原始数组。
+
+
+
+#### 2. slice() 返回一个从开始到结束（不包括结束）选择的数组的一部分浅拷贝到一个新数组对象。原始数组不会被修改。
+
+slice 不修改原数组，只会返回一个浅复制了原数组中的元素的一个新数组。
+
+```javascript 
+var values = [1, 5, 9, 2, 4, 12, 53, 92, 90]
+var values2 = values.slice(1)
+var values3 = values.slice(1, 4)
+
+console.log(values2)        // [ 5, 9, 2, 4, 12, 53, 92, 90 ]
+console.log(values3)        // [ 5, 9, 2 ]
+```
+
+此方法说白了就是从一个数组中选择一部分生成一个新数组，参数就是要选择的起始、结束位置。
+
+**注意** __此方法不修改原数组，仅仅浅拷贝原数组副本。这里注意浅拷贝如果数组里有引用对象，原数组中引用对象拷贝到新数组中，新旧对象的引用是相同的，一变都变__
+
+
+
+#### 3. splice() 通过删除现有元素和/或添加新元素来更改一个数组的内容。
+
+splice() 可以说是最强大的数组方法，可以插入元素，可以删除元素，可以替换元素。
+
+```javascript
+var myMacBook = ['i7', '16g', '256G', 'ssd', 'retina', 15.4];
+
+// 插入项
+var result1 = myMacBook.splice(4, 0, 'touchBar');     // 在索引为4的位置插入'touchBar'
+console.log(myMacBook);     // 原数组：[ 'i7', '16g', '256G', 'ssd', 'touchBar', 'retina', 15.4 ]
+console.log(result1);       // 返回值：[]
+
+// 替换项
+var result2 = myMacBook.splice(4, 1, 'Siri');     // 在索引为4的位置插入'Siri'
+console.log(myMacBook);     // 原数组：[ 'i7', '16g', '256G', 'ssd', 'Siri', 'retina', 15.4 ]
+console.log(result2);       // 返回值：[ 'touchBar' ]
+
+// 删除项
+var result3 = myMacBook.splice(4, 1);     // 从索引为4的位置删除一项（也就是'Siri'这一项）
+console.log(myMacBook);     // 原数组：[ 'i7', '16g', '256G', 'ssd', 'retina', 15.4 ]
+console.log(result3);       // 返回值：[ 'Siri' ]
+```
+
+上述示例演示可以看到：splice 方法会改变原数组内容；并且可实现 增、删、改操作（改操作实质就是：删除后增加）。
+
+splice 的返回值也可以从上面示例看到，如果有删除元素就会返回一个数组，包含从原始数组中删除的项（没有删除就反悔一个空数组）。
+
+
+### 2.9 位置方法
+
+数组位置方法有两个： indexOf() 和 lastIndexOf()。
+
+#### `indexOf()`、`lastIndexOf()` 方法返回在数组中可以找到一个给定元素的第一个索引，如果不存在，则返回-1。`indexOf()` 从数组开头向后查找, `lastIndexOf()` 从数组末尾开始向前查找。
+
+两个参数分别指定：要查找的元素、开始查找的位置。
+
+```javascript
+var array = [2, 5, 9];
+array.indexOf(2);       // 0
+array.indexOf(7);       // -1
+array.indexOf(9, 2);    // 2
+array.indexOf(2, -1);   // -1
+array.indexOf(2, -3);   // 0
+
+```
+
+#### 使用场景
+
+1. 找出指定元素出现的所有位置
+
+```javascript
+var indices = [];
+var array = ['0', '1', '2', '1', '4', '1'];
+var element = '1';
+var idx = array.indexOf(element);
+
+// 循环查找所有元素
+while (idx != -1) {
+  indices.push(idx);
+
+  // 找到一个匹配的元素之后，从下一个位置（idx + 1）继续查找
+  idx = array.indexOf(element, idx + 1);
+}
+console.log(indices);     // [ 1, 3, 5 ]
+```
+
+2. 判断一个元素是否在数组里，不在则更新数组
+
+```javascript
+function updateBrandCollection(brands, brand) {
+  if (brands.indexOf(brand) === -1) {
+    brands.push(brand);
+    console.log('新品牌集合: ' + brands);
+
+  } else if (brands.indexOf(brand) > -1) {
+    console.log(brand + ' 已经存在于品牌集合中.');
+  }
+}
+
+var brands = ['苹果', '联想', 'ThankPad', '戴尔'];
+
+updateBrandCollection(brands, '宏碁');      // 新品牌集合: 苹果,联想,ThankPad,戴尔,宏碁
+updateBrandCollection(brands, '苹果');      // 苹果 已经存在于品牌集合中.
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
