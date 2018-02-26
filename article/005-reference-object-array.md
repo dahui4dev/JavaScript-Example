@@ -511,19 +511,88 @@ console.log(filterResult)   // [ 3, 4, 5, 4, 3 ]
 
 ```
 
-以上示例演示了：every、some、filter 三个方法的使用，这三个方法主要通过给定函数判断数组每一项是否符合我们的条件
+以上示例演示了：every、some、filter 三个方法的使用，这三个方法主要通过接收 "给定函数" 来判断数组每一项元素是否 “给定函数”，如果符合就返回相应的结果。
+
+```javascript
+var numbers = [1, 2, 3, 4, 5, 4, 3, 2, 1]
+
+/**
+ * map 按照特定逻辑运算每一项元素，并将每一项运算之后的结果组成数组返回。
+ * @type {Array}
+ */
+var mapResult = numbers.map(function (item, index, array) {
+  return item * 2;
+});
+console.log(mapResult);   // [ 2, 4, 6, 8, 10, 8, 6, 4, 2 ]
+
+/**
+ * 本质与 for 循环相同
+ */
+numbers.forEach(function (item, index, array) {
+  return item * 2;
+});
+
+```
+
+**迭代方法总结：每个函数都接受一个”给定函数“，用于对数组每一个元素执行运算。”给定函数“ 接收参数都是三个：每一项的值、该项在数组的下标、数组对象本身。**
+
+有了这些迭代方法，我们就可以灵活的处理数组的各种情况。
+
+### 2.11、缩小方法
+
+- reduce()： 从数组第一项开始，逐个遍历到最后。
+- reduceRight()： 从数组的最后一项开始，向前遍历到第一项。
+
+__上面两个方法都接收两个参数：__
+
+1. callback: 在数组每一项上调用的函数，包含四个参数：
+    1. accumulator：前一个值（累加器累加回调的返回值；它是上一次调用回调时返回的累积值，或 `initialValue`）
+    2. currentValue：当前值
+    3. currentIndex：（可选）元素的下标
+    4. array：（可选）数组对象
+2. initialValue:（可选）作为缩小基础的初始值。
+
+__返回值：__
+
+1. 函数累计处理的结果
 
 
+**⚠️：如果没有提供initialValue，reduce 会从索引1的地方开始执行 callback 方法，跳过第一个索引。如果提供initialValue，从索引0开始。**
 
 
+```javascript
 
+var values = [1, 2, 3, 4, 5];
 
+/**
+ * 数组每一项调用的函数
+ * @param prev 前一个值
+ * @param current 当前值
+ * @param index 元素下标
+ * @param array 数组对象
+ * @return {*} 返回结果
+ */
+var calcFunc = function (prev, current, index, array) {
+  return prev + current;
+}
 
+var sum = values.reduce(calcFunc);
+console.log(sum);  // 15
 
+```
 
+使用场景：（大家可以思考下以下场景使用 reduce 如何实现）
 
+1. 计算数组里所有值的和
+2. 将二维数组转换为一维数组
+3. 计算数组中每个元素出现的次数
+4. 数组去重
 
+reduceRight 与 reduce 计算原理完全相同仅仅是顺序相反。
 
+### Array总结
+
+以上就是Array的所有方法整理，希望会对大家的理解有所帮助。
 
 
 
