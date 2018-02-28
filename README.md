@@ -16,8 +16,8 @@
 4. [√][变量、作用域或内存问题](./article/004-variables-scope.md)
 5. [-]引用类型之
     1. [√][Object、Array](./article/005-reference-object-array.md)
-    2. [-][Date、RegExp](./article/005-reference-date-regexp.md)
-6. [-]面向对象的程序设计
+    2. [√][Date、RegExp](./article/005-reference-date-regexp.md)
+6. [-][面向对象的程序设计](./article/006-object-oriented.md)
 7. [-]函数表达式
 8. [-]BOM
 
