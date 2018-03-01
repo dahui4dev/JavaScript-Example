@@ -66,7 +66,15 @@ pattern1 与 pattern2 是完全等价的两个正则表达式。
 
 使用字面量和使用 RegExp 构造函数 区别：**使用字面量始终会共享同一个 RegExp 实例，而使用构造函数创建的每一个新 RegExp 实例都是一个新实例。**
 
+#### RegExp 实例属性
 
+RegExp 的每个实例都具有下列属性，通过这些属性可以去的有关模式的各种信息。
+
+- global： boolean，表示是否设置了 g 标志。
+- ignoreCase：boolean，表示是否设置了 i 标志。
+- lastIndex：int，表示开始搜索下一个匹配项的字符位置，从0算起。
+- multiline：boolean，表示是否设置了 m 标志。
+- source： 正则表达式的字符串表示，按照字面量形式而非传入构造函数中的字符串模式返回。
 
 ### 3、Function类型
 
