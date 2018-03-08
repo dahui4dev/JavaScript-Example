@@ -7,7 +7,7 @@
       </div>
       <div>
         <ul>
-          <child-li :item="item" v-for="item of tempArray" />
+          <child-li :item="item" v-for="item of tempArray" :key="item.name"/>
         </ul>
       </div>
     </div>
