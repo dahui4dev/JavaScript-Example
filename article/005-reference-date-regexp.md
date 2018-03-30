@@ -120,11 +120,18 @@ var sum2 = function (num1, num2) {
 
 由以上示例可以看出，下面的函数，在执行到函数所在的语句之前，变量 sum2 不会保存对函数的引用，所以会报语法错误；而上面的函数声明因为存在变量提升（function declaration hoisting），所以可以正常运行。
 
+#### 3.3、作为值的函数
 
+因为函数名本身就是变量，所以函数也可以作为值来使用。
 
+1. 函数可当作参数传递给另一个函数；
+2. 函数可作为另一个函数的结果返回。
 
-
-
+```javascript
+function callSomeFunction(someFunc, someArgs) {
+    return someFunc(someArgs);
+}
+```
 
 
 ### 4、基本包装类型
